@@ -10,8 +10,12 @@ public class Country implements Area{
 
     public Country(String name) {
         this.name = name;
+        this.regions = new HashMap<>();
     }
 
+    public String getName() {
+        return name;
+    }
 
     @Override
     public ArrayList<Location> getTopLoc() {

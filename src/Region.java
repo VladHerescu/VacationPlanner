@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Herescu on 3/21/2018.
@@ -17,5 +18,9 @@ public class Region implements Area{
     @Override
     public ArrayList<Location> getTopLoc() {
         return null;
+    }
+
+    public String getName() {
+        return name;
     }
 }

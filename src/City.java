@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.TreeMap;
 
 
@@ -7,19 +8,21 @@ import java.util.TreeMap;
  */
 public class City implements Area{
     String name;
-    ArrayList<Location> locations;
+    HashMap<String, Location> locations;
 
     public City(String name) {
         this.name = name;
-        this.locations = new ArrayList<Location>();
+        this.locations = new HashMap();
     }
 
-    public void addLocation(Location location) {
-        locations.add(location);
+    public void addLocation(String name, Location location) {
+        locations.put(name,location);
     }
+
+
     /*
-    Will return a list of cheapest locations here
-     */
+        Will return a list of cheapest locations here
+         */
     public ArrayList<Location> getTopLoc() {
         return null;
     }
