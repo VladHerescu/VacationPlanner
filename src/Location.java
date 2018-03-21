@@ -18,7 +18,7 @@ public class Location {
         this.pricePerDay = pricePerDay;
         this.startingDate = startingDate;
         this.endingDate = endingDate;
-        this.activities = new ArrayList<Activity>();
+        this.activities = new ArrayList<>();
     }
 
     public void addActivity(Activity activity) {

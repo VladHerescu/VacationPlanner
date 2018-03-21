@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +24,32 @@ public class Datacenter {
         this.cities = new HashMap<>();
     }
 
+    public void printCheapestActivity() {
+        cheapestLoc.getLocationInfo();
+    }
+    public void getInfoAboutLoc(String name) {
+        if (locations.containsKey(name)) {
+            locations.get(name).getLocationInfo();
+        } else {
+            System.out.println("Couldn't find the specified location. Please try again!");
+        }
+    }
+    public void getTopLocations(String fromWhere, Date startingDate, Date endingDate) {
+        ArrayList<Location> cheapLocations = new ArrayList<>();
+        if (countries.containsKey(fromWhere)) {
+            cheapLocations = countries.get(fromWhere).getTopLoc(2,startingDate,endingDate);
+        }
+        if (regions.containsKey(fromWhere)) {
+            cheapLocations = regions.get(fromWhere).getTopLoc(2,startingDate,endingDate);
+        }
+        if (cities.containsKey(fromWhere)) {
+            cheapLocations = cities.get(fromWhere).getTopLoc(2,startingDate,endingDate);
+        }
+        for(Location l : cheapLocations){
+            l.getLocationInfo();
+            System.out.println();
+        }
+    }
     public void printAllAreas() {
         for (Map.Entry<String, Country> country : countries.entrySet()) {
             for (Map.Entry<String, Region> region : country.getValue().regions.entrySet()) {
