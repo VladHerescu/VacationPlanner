@@ -7,8 +7,11 @@ import java.util.Date;
  * Created by Herescu on 3/21/2018.
  */
 public class Parser {
-    public static void getAreas() {
-        String areasInputFile = "Areas.txt";
+    /**
+     * Reads from the input file the areas and create the hierarchy.
+     * Also, it fills the Datacenter fields accordingly.
+     */
+    public static void getAreas(String areasInputFile) {
         try (BufferedReader br = new BufferedReader(new FileReader(areasInputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -40,8 +43,15 @@ public class Parser {
     /*
     Parseaza fisierul cu activitati si in acelasi timp cauta activitatea care este cel mai ieftin de practicat timp de 10 zile
      */
-    public static void getActivities() {
-        String locationInputFiles = "Locations.txt";
+
+    /**
+     * Reads the input location file(Found it better to call it activities here)
+     * It parses what was read and creates an location with those parameters.
+     * Also it keeps track of the cheapest location globally.
+     * It also update the location list for the country and the region where the specific location is held.
+     * This gives linear complexity to every operation requested by the user, so the only complexity is the one at insertion.
+     */
+    public static void getActivities(String locationInputFiles) {
         try (BufferedReader br = new BufferedReader(new FileReader(locationInputFiles))) {
             String line;
             while ((line = br.readLine()) != null) {

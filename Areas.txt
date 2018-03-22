@@ -2,3 +2,4 @@ Romania, Vrancea, Focsani
 Romania, Galati, Galati
 Romania, Iasi, Iasi
 USA, Illinois, Chicago
+Romania, Cluj, Cluj

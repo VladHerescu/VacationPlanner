@@ -21,10 +21,17 @@ public class Location {
         this.activities = new ArrayList<>();
     }
 
+    /**
+     * Adds an activity
+     * @param activity
+     */
     public void addActivity(Activity activity) {
         this.activities.add(activity);
     }
 
+    /**
+     * Prints the location info
+     */
     public void getLocationInfo() {
         System.out.println("For location named -" + name + "- we have registered the following info:");
         System.out.println("The city where this is located is " + city.getName());
